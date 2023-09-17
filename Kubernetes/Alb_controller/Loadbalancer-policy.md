@@ -3,7 +3,8 @@
 eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이름>
 ```
 <br>
-iam_policy.json
+
+# iam_policy.json
 ```
 {
     "Version":"2012-10-17",
@@ -24,16 +25,17 @@ iam_policy.json
     ]
  }
 ```
+<br>
 
-IAM 권한 생성
+# IAM 권한 생성
 ```
 aws iam create-policy \
     --policy-name LoadBalancerControllerIAMPolicy \
     --policy-document file://iam_policy.json
 ```
+<br>
 
-
-정책 연결 [ 권한 추가 ]
+# 정책 연결 [ 권한 추가 ]
 ```
 AdministratorAccess
 ```
