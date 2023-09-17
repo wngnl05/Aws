@@ -1,4 +1,4 @@
-# Deployment란 ?
+## Deployment란 ?
 코드 배포를 세밀하게 제어할 수 있는 object입니다. pod 복제, 배포 일시중지, 재개 및 롤백이 가능하도록 도와줍니다.
 <br>
 
