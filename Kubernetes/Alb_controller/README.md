@@ -4,11 +4,7 @@ eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이�
 ```
 
 
-
-
-# Loadbalancer-policy.md에서 정책을 생성해주세요.  
-
-
+# Loadbalancer-policy.md에서 정책을 생성해주세요.         
 
 
 
@@ -16,8 +12,6 @@ eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이�
 ```
 curl -o service-account.yaml https://raw.githubusercontent.com/jinhyeokhyeok/Aws/main/Kubernetes/Alb_controller/service-account.yaml
 ```
-
-
 
 
 # Helm 설치 스크립트를 다운로드하고 실행 권한을 부여합니다.
@@ -29,8 +23,6 @@ chmod +x get_helm.sh
 helm repo add eks https://aws.github.io/eks-charts
 helm repo update
 ```
-
-
 
 
 # AWS Load Balancer Controller를 지정한 네임스페이스에 설치합니다.
