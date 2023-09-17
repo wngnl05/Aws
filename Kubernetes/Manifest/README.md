@@ -1,3 +1,9 @@
+# Namespace
+```
+kubectl create namespace <네임스페이스 이름>
+```
+<br>
+
 # Deployment.yaml
 ```
 apiVersion: apps/v1
