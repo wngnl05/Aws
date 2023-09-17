@@ -85,3 +85,18 @@ spec:
             port:
               number: 80
 ```
+<br><br>
+
+#Code
+```
+kubectl get deployment -A
+```
+```
+kubectl get deployment -n <네임스페이스 이름>
+```
+```
+kubectl describe deployment -n <네임스페이스 이름>
+```
+```
+kubectl describe pod <파드 이름> -n <네임스페이스 이름>
+```
