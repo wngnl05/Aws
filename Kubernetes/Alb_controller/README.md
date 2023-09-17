@@ -2,12 +2,9 @@
 ```
 eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이름>
 ```
-#
-#
-#
 
-# Loadbalancer-policy.md에서 정책을 생성해주세요.
-#
+
+# Loadbalancer-policy.md에서 정책을 생성해주세요.  
 
 # service-account.yaml을 다운로드 해줍니다.
 ```
