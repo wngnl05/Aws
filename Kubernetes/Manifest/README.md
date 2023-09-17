@@ -87,7 +87,7 @@ spec:
 ```
 <br><br>
 
-#Code
+# Code
 ```
 kubectl get deployment -A
 ```
