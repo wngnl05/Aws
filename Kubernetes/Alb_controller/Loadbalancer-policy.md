@@ -1,3 +1,5 @@
+iam_policy.json
+```
 {
     "Version":"2012-10-17",
     "Statement":[
@@ -16,3 +18,20 @@
        }
     ]
  }
+```
+
+IAM 권한 생성
+```
+aws iam create-policy \
+    --policy-name LoadBalancerControllerIAMPolicy \
+    --policy-document file://iam_policy.json
+```
+
+
+정책 연결 [ 권한 추가 ]
+```
+AdministratorAccess
+```
+```
+ElasticLoadBalancingFullAccess
+```
