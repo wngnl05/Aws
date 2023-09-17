@@ -1,6 +1,6 @@
 # Cluster 다운로드
 ```
-curl -o cluster.yaml 
+curl -o cluster.yaml https://raw.githubusercontent.com/jinhyeokhyeok/Aws/main/Kubernetes/Cluster/cluster.yaml
 ```
 <br>
 <br>
