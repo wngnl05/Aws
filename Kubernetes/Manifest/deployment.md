@@ -1,3 +1,4 @@
+```
 apiVersion: apps/v1
 kind: Deployment
 
@@ -30,3 +31,4 @@ spec:
             cpu: 500m
           requests:
             cpu: 200m
+```
