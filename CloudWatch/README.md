@@ -35,4 +35,16 @@ SugreQueueLength : 정상 인스턴스 대상으로 라우팅이 보류 중인 �
 <br><br>
 
 # Amazon RDS
-
+CPUUtilization : CPU 사용 백분율   
+DatabaseConnections : 사용 중인 데이터베이스 연결 수   
+DiskQueueDepth : 디스크 엑세스를 대기 중인 I/O (읽기/쓰기 요청) 수   
+FailedSQLServerAgentJobsCount : 최근 1분간 실패한 SQL Server 에이전트 작업의 수   
+NetworkReceiveThroughput : DB 인스턴스 수신 네트워크 트래픽   
+NetworkTransmitThroughput : DB 인스턴스 송신 네트워크 트래픽   
+ReadIOPS : 초당 평균 디스크 읽기 I/O 연산 수   
+ReadLatency : 디스크 I/O 연산당 평균 처리 시간   
+ReadThroughput : 초당 디스크에서 읽은 평균 바이트 수   
+SwapUsage : DB 인스턴스에서 사용된 스왑 공간 크기   
+WriteIOPS : 초당 평균 디스크 쓰기 I/O 연산 수   
+WriteLatency : 디스크 I/O 연산당 평균 처리 시간   
+WriteThroughput : 초당 디스크에 쓴 평균 바이트 수   
