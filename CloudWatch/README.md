@@ -1,7 +1,7 @@
 # AWS Auto Scaling
-GroupMinSize/ GroupMaxSize : Auto Scaling 그룹의 최소/최대 크기
-GroupDesiredCapacity : Auto Scaling 그룹에서 유지 관리를 시도하는 인스턴스의 수
-GroupServiceInstances : Auto Scaling그룹의 일부로 실행되는 인스턴스의 수
+GroupMinSize/ GroupMaxSize : Auto Scaling 그룹의 최소/최대 크기  
+GroupDesiredCapacity : Auto Scaling 그룹에서 유지 관리를 시도하는 인스턴스의 수  
+GroupServiceInstances : Auto Scaling그룹의 일부로 실행되는 인스턴스의 수  
 GroupPendingInstances : 아직 실행되지 않은 인스턴스의 수
 GroupStandbtInstances : Standby 상태에 있는 인스턴스의 수
 GroupTerminatingInstances : 종료 중인 인스턴스의 수
