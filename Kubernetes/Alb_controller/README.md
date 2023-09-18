@@ -1,3 +1,15 @@
+# Albcontroller를 생성하기전에
+Alb를 생성할려면 서브넷에 태그를 추가해줘야 합니다.
+퍼블릭 서브넷
+```
+kubernetes.io/role/elb: 1
+```
+프라이빗 서브넷
+```
+kubernetes.io/role/internal-elb: 1
+```
+<br><br>
+
 # oidc 생성 명령어
 ```
 eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이름>
@@ -36,18 +48,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller
 ```
-<br>
-
-Alb를 생성할려면 서브넷에 태그를 추가해줘야 합니다.
-퍼블릭 서브넷
-```
-kubernetes.io/role/elb: 1
-```
-프라이빗 서브넷
-```
-kubernetes.io/role/internal-elb: 1
-```
-<br><br>
+<br><br><br>
 
 # AwsloadbalncerConrtroller 설치되었는지 확인하는 방법
 ```
