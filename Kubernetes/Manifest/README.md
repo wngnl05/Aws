@@ -71,6 +71,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: <>
     alb.ingress.kubernetes.io/subnets: <서브넷 아이디>, <서브넷 아이디>
     alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/healthcheck-path: <>
 
 spec:
   ingressClassName: alb
