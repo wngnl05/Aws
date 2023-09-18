@@ -39,6 +39,7 @@ helm list -n kube-system
 kubectl get events -n kube-system | grep aws-load-balancer-controller
 ```
 <br>
+
 # AWS Load Balancer Controller를 지정한 네임스페이스에 설치합니다.
 ```
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
