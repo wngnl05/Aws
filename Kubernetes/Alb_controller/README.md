@@ -28,6 +28,16 @@ helm repo update
 ```
 <br>
 
+# AWS Load Balancer Controller를 지정한 네임스페이스에 설치합니다.
+```
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+  -n kube-system \
+  --set clusterName=<클러스터 이름> \
+  --set serviceAccount.create=false \
+  --set serviceAccount.name=aws-load-balancer-controller
+```
+<br><br>
+
 # AwsloadbalncerConrtroller 설치되었는지 확인하는 방법
 ```
 kubectl get pods -n kube-system | grep aws-load-balancer-controller
@@ -39,16 +49,6 @@ helm list -n kube-system
 kubectl get events -n kube-system | grep aws-load-balancer-controller
 ```
 <br>
-
-# AWS Load Balancer Controller를 지정한 네임스페이스에 설치합니다.
-```
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
-  -n kube-system \
-  --set clusterName=<클러스터 이름> \
-  --set serviceAccount.create=false \
-  --set serviceAccount.name=aws-load-balancer-controller
-```
-<br><br>
 
 # Alb-controller를 삭제하는 방법
 ```
