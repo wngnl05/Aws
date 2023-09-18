@@ -36,3 +36,9 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller
 ```
+<br><br>
+
+# Alb-controller를 삭제하는 방법
+```
+helm uninstall aws-load-balancer-controller -n kube-system
+```
