@@ -17,10 +17,10 @@ managedNodeGroups:
     privateNetworking: true
     
     subnets:
-      - <서브넷 아이디>
-      - <서브넷 아이디>
-      - <서브넷 아이디>
-      - <서브넷 아이디>
+      - <리전>a-priv
+      - <리전>b-priv
+      - <리전>a-pub
+      - <리전>b-pub
     
     iam:
       withAddonPolicies:
