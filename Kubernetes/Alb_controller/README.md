@@ -12,6 +12,9 @@ eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이�
 ```
 curl -o service-account.yaml https://raw.githubusercontent.com/jinhyeokhyeok/Aws/main/Kubernetes/Alb_controller/service-account.yaml
 ```
+```
+kubectl apply -f service-account.yaml
+```
 <br>
 
 # Helm 설치 스크립트를 다운로드하고 실행 권한을 부여합니다.
