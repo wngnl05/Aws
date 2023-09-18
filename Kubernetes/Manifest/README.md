@@ -27,6 +27,9 @@ spec:
         <key> : <value>
         
     spec:
+      nodeSelector:
+        <Node key>: <Node Value>
+
       containers:
       - name: <컨테이너 이름>
         image: <Docekr 이미지 경로>
