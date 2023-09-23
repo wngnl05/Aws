@@ -1,12 +1,12 @@
 # Albcontroller를 생성하기전에
 Alb를 생성할려면 서브넷에 태그를 추가해줘야 합니다.
-퍼블릭 서브넷
+퍼블릭 서브넷   // value는 1로 지정
 ```
-kubernetes.io/role/elb: 1
+kubernetes.io/role/elb
 ```
-프라이빗 서브넷
+프라이빗 서브넷   // value는 1로 지정
 ```
-kubernetes.io/role/internal-elb: 1
+kubernetes.io/role/internal-elb
 ```
 <br><br>
 
