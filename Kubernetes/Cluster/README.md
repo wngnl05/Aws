@@ -30,10 +30,6 @@ managedNodeGroups:
         cloudWatch: true
     labels:
       <key>: <value>
-    
-    # 노드 셀렉터 추가
-    nodeSelector:
-      <Nodw key>: <Node value>
 ```
 <br>
 
