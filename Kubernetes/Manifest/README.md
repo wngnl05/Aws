@@ -53,7 +53,7 @@ metadata:
   namespace: <네임스페이스 이름>
 spec:
   selector:
-    <key>: <value>
+    <Pod Key>: <Pod Value>
   ports:
   - port: 80
     targetPort: <애플리케이션 포트>
