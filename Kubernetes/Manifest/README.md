@@ -19,12 +19,12 @@ spec:
   replicas: <생성할 파드 수>
   selector:
     matchLabels:
-      <key> : <value>
+      <key> : <value> # Deployment가 관리하는 Pod를 선택하기 위한 레이블
       
   template:
     metadata:
       labels:
-        <key> : <value>
+        <Pod Key> : <Pod Value> # 각 Pod에 할당되는 레이블
         
     spec:
       nodeSelector:
