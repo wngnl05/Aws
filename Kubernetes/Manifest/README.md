@@ -13,7 +13,7 @@ metadata:
   name: <deployment 이름>
   namespace: <namespace 이름>
   labels:
-    <key> : <value>  
+    <key> : <value>  # Deployment가 관리하는 Pod를 선택하기 위한 레이블
     
 spec:
   replicas: <생성할 파드 수>
