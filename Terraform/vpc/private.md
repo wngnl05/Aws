@@ -2,7 +2,7 @@
 ```
 # 프라이빗 서브넷 생성
 resource "aws_subnet" "private_a" {
-  vpc_id     = aws_vpc.vpc.id
+  vpc_id     = <VPC ID>
   cidr_block = "10.0.3.0/24"
   availability_zone = "${var.region}a"
   tags = {
@@ -28,7 +28,7 @@ resource "aws_eip" "eip_1" {
 ```
 # Nat Gateway
 resource "aws_nat_gateway" "nat_a" {
-  allocation_id = aws_eip.eip_1.id
+  allocation_id = <EIP ID>
   subnet_id = <Public Subnet ID>
   tags = {
     Name = "nat-a"
