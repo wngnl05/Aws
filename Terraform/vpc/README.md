@@ -1,4 +1,4 @@
-# 환경변수 ${var.name}  ${var.region}
+# 환경변수 ${var.name}
 ```
 variable "name" {
   type    = string
