@@ -16,7 +16,7 @@ resource "aws_vpc" "vpc" {
 }
 ```
 
-# Public
+# Public Subnet
 ```
 # 인터넷 게이트웨이
 resource "aws_internet_gateway" "igw" {
@@ -35,6 +35,9 @@ resource "aws_subnet" "public_a" {
     Name = "${var.name}-public-a"
   }
 }
+```
+# Public Route Table
+```
 # 퍼블릭 라우팅 테이블
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.vpc.id
@@ -55,7 +58,9 @@ resource "aws_route_table_association" "public_a" {
 }
 ```
 
-# Private
+
+
+# Private Subnet
 ```
 # 프라이빗 서브넷 생성
 resource "aws_subnet" "private_a" {
@@ -66,6 +71,9 @@ resource "aws_subnet" "private_a" {
     Name = "${var.name}-private-a"
   }
 }
+```
+# Private Route Table
+```
 # 탄력적 IP
 resource "aws_eip" "eip_1" {
   vpc   = true
