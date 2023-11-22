@@ -12,6 +12,7 @@ resource "aws_subnet" "public_a" {
 }
 ```
 <br/>
+
 # Create Internet Gateway
 ```
 # 인터넷 게이트웨이
@@ -23,6 +24,7 @@ resource "aws_internet_gateway" "igw" {
 }
 ```
 <br/>
+
 # Public Route Table
 ```
 # 퍼블릭 라우팅 테이블
@@ -34,6 +36,7 @@ resource "aws_route_table" "public" {
 }
 ```
 <br/>
+
 # Conect Internet Gateway to Route Table
 ```
 # 퍼블릭 라우팅 테이블 인터넷게이트웨이 연결하기
@@ -44,6 +47,7 @@ resource "aws_route" "public" {
 }
 ```
 <br/>
+
 # Conect Subnet to Route Table
 ```
 # 퍼블릭 서브넷을 라우팅 테이블에 연결하기
