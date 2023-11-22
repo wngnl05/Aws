@@ -58,7 +58,7 @@ resource "aws_route_table_association" "public_a" {
 }
 ```
 
-<br/>
+<br/><br/>
 
 # Private Subnet
 ```
