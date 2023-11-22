@@ -29,7 +29,7 @@ resource "aws_eip" "eip_1" {
 # Nat Gateway
 resource "aws_nat_gateway" "nat_a" {
   allocation_id = aws_eip.eip_1.id
-  subnet_id = aws_subnet.public_a.id
+  subnet_id = <Public Subnet ID>
   tags = {
     Name = "nat-a"
   }
@@ -41,7 +41,7 @@ resource "aws_nat_gateway" "nat_a" {
 ```
 # 프라이빗 라우팅 테이블 생성
 resource "aws_route_table" "private_a" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id = <VPC ID>
   tags = {
     Name = "${var.name}-private-a-rt"
   }
@@ -53,9 +53,9 @@ resource "aws_route_table" "private_a" {
 ```
 # Natgateway 연결
 resource "aws_route" "private_a" {
-  route_table_id         = aws_route_table.private_a.id
+  route_table_id         = <RouteTable ID>
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_nat_gateway.nat_a.id
+  gateway_id             = <NatGateway ID>
 }
 ```
 <br/>
@@ -64,7 +64,7 @@ resource "aws_route" "private_a" {
 ```
 # 프라이빗 서브넷 연결
 resource "aws_route_table_association" "private_a" {
-  subnet_id      = aws_subnet.private_a.id
-  route_table_id = aws_route_table.private_a.id
+  subnet_id      = <PrivateSubnet ID>
+  route_table_id = <RouteTable ID>
 }
 ```
