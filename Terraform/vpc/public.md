@@ -2,7 +2,7 @@
 ```
 # 퍼블릭 서브넷
 resource "aws_subnet" "public_a" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id =  <VPC ID>
   cidr_block = "10.0.1.0/24"
   availability_zone = "${var.region}a"
   map_public_ip_on_launch = true
@@ -17,7 +17,7 @@ resource "aws_subnet" "public_a" {
 ```
 # 인터넷 게이트웨이
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id = <VPC ID>
   tags = {
     Name = "${var.name}-igw"
   }
@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "igw" {
 ```
 # 퍼블릭 라우팅 테이블
 resource "aws_route_table" "public" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id = <VPC ID>
   tags = {
     Name = "${var.name}-public-rt"
   }
@@ -41,9 +41,9 @@ resource "aws_route_table" "public" {
 ```
 # 퍼블릭 라우팅 테이블 인터넷게이트웨이 연결하기
 resource "aws_route" "public" {
-  route_table_id         = aws_route_table.public.id
+  route_table_id         = <RouteTable ID>
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.igw.id
+  gateway_id             = <IGW ID>
 }
 ```
 <br/>
@@ -52,7 +52,7 @@ resource "aws_route" "public" {
 ```
 # 퍼블릭 서브넷을 라우팅 테이블에 연결하기
 resource "aws_route_table_association" "public_a" {
-  subnet_id      = aws_subnet.public_a.id
-  route_table_id = aws_route_table.public.id
+  subnet_id      = <PublicSubnet ID>
+  route_table_id = <RouteTable ID>
 }
 ```
