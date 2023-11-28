@@ -2,9 +2,9 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: infra-cluster
-  region: ap-northeast-2
-  version: "1.28"
+  name: <클러스터 이름>
+  region: <리전>
+  version: "<쿠버네티스 버전>"
 
 cloudWatch:
   clusterLogging:
@@ -47,30 +47,28 @@ iam:
         Resource: '*'
 
 vpc:
+  id: <vpc 아이디>
   subnets:
     public:
-      ap-northeast-2a: { id: public_a }
-      ap-northeast-2b: { id: public_b }
-      ap-northeast-2c: { id: public_c }
+      <리전>a-pub: { id: (서브넷 아이디) }
+      <리전>b-pub: { id: (서브넷 아이디) }
     private:
-      ap-northeast-2a: { id: private_a }
-      ap-northeast-2b: { id: private_b }
-      ap-northeast-2c: { id: private_c }
+      <리전>a-priv: { id: (서브넷 아이디) }
+      <리전>b-priv: { id: (서브넷 아이디) }
 
 managedNodeGroups:
-  - name: skills-app
-    instanceName: skoills-app
-    labels: { skills/dedicated: app }
-    tags: { skills/dedicated: app }
-    instanceType: c5.large
-    desiredCapacity: 2
-    minSize: 2
-    maxSize: 20
-  - name: skills-addon
-    instanceName: skoills-addon
-    labels: { skills/dedicated: addon }
-    tags: { skills/dedicated: addon }
-    instanceType: c5.large
-    desiredCapacity: 2
-    minSize: 2
-    maxSize: 20
+  - name: <노드그룹 이름>
+    instanceName: <인스턴스 이름>
+    instanceType: <인스턴스 타입>
+    desiredCapacity: <생성할 노드 수>
+    minSize: <최소 노드 수>
+    maxSize: <최대 노드 수>
+    
+    subnets:
+      - <리전>a-priv
+      - <리전>b-priv
+      - <리전>a-pub
+      - <리전>b-pub
+      
+    labels:
+      <key>: <value>
