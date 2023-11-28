@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: skills-cluster
+  name: infra-cluster
   region: ap-northeast-2
   version: "1.28"
 
@@ -49,16 +49,28 @@ iam:
 vpc:
   subnets:
     public:
-      ap-northeast-2a: { id: subnet-062e812919127a902 }
-      ap-northeast-2b: { id: subnet-022b28ac7bb8df321 }
-      ap-northeast-2c: { id: subnet-0b89ac1daf509ea41 }
+      ap-northeast-2a: { id: public_a }
+      ap-northeast-2b: { id: public_b }
+      ap-northeast-2c: { id: public_c }
+    private:
+      ap-northeast-2a: { id: private_a }
+      ap-northeast-2b: { id: private_b }
+      ap-northeast-2c: { id: private_c }
 
 managedNodeGroups:
   - name: skills-app
-    instanceName: skills-app
+    instanceName: skoills-app
     labels: { skills/dedicated: app }
     tags: { skills/dedicated: app }
-    instanceType: t2.micro
+    instanceType: c5.large
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 20
+  - name: skills-addon
+    instanceName: skoills-addon
+    labels: { skills/dedicated: addon }
+    tags: { skills/dedicated: addon }
+    instanceType: c5.large
     desiredCapacity: 2
     minSize: 2
     maxSize: 20
