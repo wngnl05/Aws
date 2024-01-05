@@ -1,4 +1,9 @@
 # Provider.tf 파일
 ```
-curl -o 0-provider.tf https://raw.githubusercontent.com/jinhyeokhyeok/Aws/main/Terraform/0-provider.tf
+provider "aws" {
+  access_key = ""
+  secret_key = ""
+  region = "<리전>"
+  profile = "default"
+}
 ```
