@@ -20,7 +20,7 @@ resource "aws_vpc" "vpc" {
   tags                 = { Name = var.Vpc_Content["vpc_name"] }
 }
 ```
-
+<br>
 
 
 # Public
