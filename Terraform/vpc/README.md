@@ -68,6 +68,20 @@ resource "aws_route_table_association" "public_b" {
   subnet_id      = aws_subnet.public_subnet_b.id
   route_table_id = aws_route_table.public.id
 }
+
+# 퍼블릭 서브넷 C 셍성
+resource "aws_subnet" "public_subnet_c" {
+  vpc_id                  = aws_vpc.vpc.id
+  cidr_block              = var.Vpc_Content.public_cidr[2]
+  availability_zone       = "ap-northeast-2c"
+  map_public_ip_on_launch = true
+  tags                    = { Name = var.Vpc_Content.public_subnet_name[2] }
+}
+# 퍼블릭 서브넷 C를 퍼블릭 라우팅 테이블에 연결
+resource "aws_route_table_association" "public_c" {
+  subnet_id      = aws_subnet.public_subnet_c.id
+  route_table_id = aws_route_table.public.id
+}
 ```
 
 
