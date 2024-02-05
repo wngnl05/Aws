@@ -7,8 +7,11 @@ variable "Vpc_Content" {
     vpc_name     = "skills-vpc"
     vpc_cidr     = "10.0.0.0/16"
 
-    public_subnet_name = ["skills-pub-a", "skills-pub-b"]
-    public_cidr        = ["10.0.1.0/24", "10.0.2.0/24"]
+    public_subnet_name = ["skills-pub-a", "skills-pub-b", "skills-pub-c"]
+    public_cidr        = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+
+    private_subnet_name = ["skills-priv-a", "skills-priv-b", "skills-priv-c"]
+    private_cidr        = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   }
 }
 
