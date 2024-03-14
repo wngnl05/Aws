@@ -22,7 +22,7 @@ eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이�
 
 # service-account.yaml을 다운로드 해줍니다.
 ```
-curl -o service-account.yaml https://raw.githubusercontent.com/jinhyeokhyeok/Aws/main/Kubernetes/Alb_controller/service-account.yaml
+curl -o service-account.yaml https://raw.githubusercontent.com/wngnl05/Aws/main/Kubernetes/Alb_controller/service-account.yaml
 ```
 ```
 kubectl apply -f service-account.yaml
