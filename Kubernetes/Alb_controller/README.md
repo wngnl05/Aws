@@ -16,9 +16,37 @@ eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이�
 ```
 <br>
 
-# Loadbalancer-policy.md에서 정책을 생성해주세요.
+# Loadbalancer-Role 을 생성해줍니다.
+```
+{
+    "Version":"2012-10-17",
+    "Statement":[
+       {
+          "Effect":"Allow",
+          "Principal":{
+             "Federated":"arn:aws:iam::<사용자 아이디>:oidc-provider/<OIDC URI>"
+          },
+          "Action":"sts:AssumeRoleWithWebIdentity",
+          "Condition":{
+             "StringEquals":{
+                "<OIDC URI>:aud":"sts.amazonaws.com",
+                "<OIDC URI>:sub":"system:serviceaccount:kube-system:aws-load-balancer-controller"
+             }
+          }
+       }
+    ]
+ }
+```
 <br>
-<br>
+
+# 정책 연결 [ 권한 추가 ]
+```
+AdministratorAccess
+```
+```
+ElasticLoadBalancingFullAccess
+```
+
 
 # service-account.yaml을 다운로드 해줍니다.
 ```
