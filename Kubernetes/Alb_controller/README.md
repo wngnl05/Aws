@@ -37,8 +37,6 @@ eksctl utils associate-iam-oidc-provider --approve --cluster <클러스터 이�
     ]
  }
 ```
-<br>
-
 # 정책 연결 [ 권한 추가 ]
 ```
 AdministratorAccess
@@ -46,7 +44,7 @@ AdministratorAccess
 ```
 ElasticLoadBalancingFullAccess
 ```
-
+<br>
 
 # service-account.yaml을 다운로드 해줍니다.
 ```
