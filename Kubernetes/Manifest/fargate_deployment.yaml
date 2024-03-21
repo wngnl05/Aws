@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: skills-deploy
-  namespace: skills
+  name: <이름>
+  namespace: <네임스페이스>
   labels:
-    skills: fargate # Fargate Profile Label    
+    <key> : <value> # Fargate Profile Label    
 spec:
   replicas: 2
   selector:
     matchLabels:
-      skills: fargate # Fargate Profile Label    
+      <key> : <value> # Fargate Profile Label    
       
   template:
     metadata:
       labels:
-        skills: fargate # Fargate Profile Label    
+        <key> : <value> # Fargate Profile Label    
         
     spec:
       affinity:
@@ -28,12 +28,12 @@ spec:
                 values:
                 - amd64
                 - arm64
-      serviceAccountName: qwer
+      serviceAccountName: <ServiceAccount 이름>
       containers:
-        - name: skills-ctn
-          image: 654654489681.dkr.ecr.ap-northeast-2.amazonaws.com/skills-ecr:latest
+        - name: <컨테이너 이름>
+          image: <Docekr 이미지 경로>
           ports:
-          - containerPort: 8080
+          - containerPort: <애플리케이션 포트>
 
           resources:
             limits:
