@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: skills-deploy
+  namespace: skills
+  labels:
+    skills: fargate # Fargate Profile Label    
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      skills: fargate # Fargate Profile Label    
+      
+  template:
+    metadata:
+      labels:
+        skills: fargate # Fargate Profile Label    
+        
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - arm64
+      serviceAccountName: qwer
+      containers:
+        - name: skills-ctn
+          image: 654654489681.dkr.ecr.ap-northeast-2.amazonaws.com/skills-ecr:latest
+          ports:
+          - containerPort: 8080
+
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
